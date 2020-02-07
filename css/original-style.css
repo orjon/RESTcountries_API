@@ -1,12 +1,17 @@
+:root {
+  --layout-border: 1px;
+  --entity-margin: 20px;
+}
+
 * {
-  box-sizing: border-box;
+	box-sizing: border-box;
   margin: 0px;
-  font-family: sans-serif;
+	font-family: sans-serif;
 }
 
 a {
   text-decoration: none;
-  color: blue;
+  color:blue;
 }
 
 h4 {
@@ -14,42 +19,45 @@ h4 {
   font-weight: 400;
 }
 
+
+
 body {
-  background-color: #aaa;
-  padding: 20px;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
+	background-color: #aaa;
+  padding: var(--entity-margin);
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
   align-items: center;
-  border: 1px solid cyan;
+}
+
+
+footer {
+	border: var(--layout-border) solid yellow;
+}
+
+footer a {
+  color:black;
 }
 
 header {
   max-width: 400px;
   width: 100%;
-  border: 1px solid yellow;
-  margin-bottom: 20px;
+	border: var(--layout-border) solid yellow;
+  margin-bottom: var(--entity-margin);
 }
 
 main {
-  max-width: 400px;
-  width: 100%;
-  flex: 1;
-  border: 1px solid yellow;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-column-gap: 20px;
-  grid-row-gap: 20px;
+    max-width: 400px;
+    width: 100%;
+    flex: 1;
+    border: var(--layout-border) solid yellow;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-column-gap: var(--entity-margin);
+    grid-row-gap: var(--entity-margin);
 }
 
-footer {
-  border: 1px solid yellow;
-}
-footer a {
-  color: black;
-}
-
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 800px){
   header {
     max-width: 850px;
   }
@@ -57,29 +65,40 @@ footer a {
   main {
     max-width: 850px;
     grid-template-columns: 1fr 1fr;
+
   }
 }
-@media screen and (min-width: 1200px) {
+
+@media screen and (min-width: 1200px){
   header {
     max-width: 1240px;
   }
-
   main {
     max-width: 1240px;
     grid-template-columns: 1fr 1fr 1fr;
+
   }
 }
-@media screen and (min-width: 1600px) {
+
+@media screen and (min-width: 1600px){
   header {
     max-width: 1660px;
   }
 
   main {
     max-width: 1660px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr  1fr;
+
   }
 }
-.card {
+
+.countries div img {
+  margin: auto;
+  width: 60%;
+  box-shadow: 0 0 15px 0 rgba(0,0,0,0.2);
+}
+
+.country, form {
   font-size: 12pt;
   background-color: #ddd;
   border-radius: 10px;
@@ -87,31 +106,24 @@ footer a {
   box-shadow: 0 0 5px 0 rgba(255, 255, 255, 0.5);
   height: 100%;
   padding: 1em;
-}
-
-.countries .country, .countries form {
   display: flex;
   flex-direction: column;
 }
-.countries .country .details, .countries form .details {
-  border: 1px solid dodgerblue;
-}
-.countries .country .details img, .countries form .details img {
-  margin: auto;
-  width: 40%;
-  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
-}
+
+
 
 .countryFullWidth {
-  grid-column: 1/4;
+  grid-column: 1 / 4;
 }
 
 .country-row, .form-row {
-  border: 1px solid lightblue;
-  display: flex;
+    border: var(--layout-border) solid lightblue;
+    padding: 10px 0 0 0;
+    display: flex;
 }
 
-.country-row label, .form-row label {
+
+.country-row label, .form-row label{
   padding-right: 10px;
 }
 
@@ -128,6 +140,7 @@ footer a {
   margin-top: auto;
 }
 
+
 button {
   height: 29px;
   outline: none;
@@ -141,9 +154,9 @@ button {
   text-transform: uppercase;
 }
 
-button.reset {
-  background-color: red;
-  margin-right: 10px;
+button.reset{
+    background-color: red;
+    margin-right: 10px;
 }
 
 button.submit {
@@ -165,15 +178,13 @@ select {
 }
 
 .left {
-  text-align: left;
+	text-align: left;
 }
 
 .center {
-  text-align: center;
+	text-align: center;
 }
 
 .right {
-  text-align: right;
+	text-align: right;
 }
-
-/*# sourceMappingURL=style.css.map */
