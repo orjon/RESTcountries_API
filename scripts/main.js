@@ -50,6 +50,11 @@ $(() => {
         timezones.push(' '+timezone)
       })
 
+      var area = 'unavailable'
+      if (country.area !== null) {
+        area = country.area
+      }
+
       $countries.append(`
         <div class='card country'>
           <div class='details'>
@@ -70,19 +75,20 @@ $(() => {
 
             <div class='row'>
               <div class='labels'>
+                <p>Area</p>
+              </div>
+              <div class='data'>
+                <p>${area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} km<sup>2</sup></p>
+              </div>
+            </div>
+
+
+            <div class='row'>
+              <div class='labels'>
                 <p>Population</p>
               </div>
               <div class='data'>
                 <p>${country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
-              </div>
-            </div>
-
-            <div class='row'>
-              <div class='labels'>
-                <p>Area</p>
-              </div>
-              <div class='data'>
-                <p>${country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} km<sup>2</sup></p>
               </div>
             </div>
 
@@ -94,6 +100,8 @@ $(() => {
                 <p>[${languages.length}]${languages}</p>
               </div>
             </div>
+
+
 
             <div class='row'>
               <div class='labels'>
@@ -131,6 +139,8 @@ $(() => {
               </div>
             </div>
 
+
+
           </div>
         </div>
       `)
@@ -147,14 +157,18 @@ $(() => {
 
 
 
-    //
-    // const arrayItemLengths = function(e) {
-    //   e.preventDefault()
-    //   e.stopPropagation()
-    //   var arrayItemLengthsArray = $('#arrayItemLengthsArray').val().split(',')
-    //   var arrayItemLengthsResult = arrayItemLengthsArray.map(item => item.length)
-    //   $('#arrayItemLengthsResult').text('['+arrayItemLengthsResult+']')
-    // }
-
-
 })
+
+
+
+
+//
+// <div class='row'>
+//   <div class='labels'>
+//     <p>Area</p>
+//   </div>
+//   <div class='data'>
+//     <p>${country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} km<sup>2</sup></p>
+//   </div>
+// </div>
+//
