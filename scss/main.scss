@@ -17,6 +17,14 @@ h4 {
   font-weight: 400;
 }
 
+html {
+  overflow-y: scroll;
+}
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* make scrollbar transparent */
+}
+
 body {
   background-color: #aaa;
   padding: $spacing;
@@ -25,7 +33,7 @@ body {
   flex-direction: column;
   align-items: center;
   border: $borderDev solid cyan;
-  overflow-y: scroll;
+  // overflow-y: scroll;
   -ms-overflow-style: none;
 }
 

@@ -1,6 +1,8 @@
-# RESTcountries.eu API
+# RESTcountries.eu
 
-Uses RESTcountries.eu API to gather list of countries of the world.
+Uses RESTcountries.eu API to gather list of countries of the world and display country flag and statistics.
+
+Responsive to different screen sizes:
 
 min-width 1700px
 ![Screen shot](/images/Screenshot1.png)
