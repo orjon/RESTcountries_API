@@ -1,15 +1,8 @@
 $(() => {
   console.log('RESTCountries API');
 
-  // const buttonAction = function(e) {
-  //   e.preventDefault()
-  //   e.stopPropagation()
-  //   $('#id').text('text')
-  //}
-
   const $countries = $('.countries');
   var countries = [];
-  var worstCase = [];
 
   function getSpecificCountries(filter = 'all') {
     console.log('getting specific countries');
@@ -160,14 +153,3 @@ $(() => {
     array.forEach((item) => {});
   }
 });
-
-//
-// <div class='row'>
-//   <div class='labels'>
-//     <p>Area</p>
-//   </div>
-//   <div class='data'>
-//     <p>${country.area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} km<sup>2</sup></p>
-//   </div>
-// </div>
-//
