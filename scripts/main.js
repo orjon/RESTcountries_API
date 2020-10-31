@@ -5,19 +5,15 @@ $(() => {
   var countries = [];
 
   function getSpecificCountries(filter = 'all') {
-    console.log('getting specific countries');
+    console.log('Getting countries');
     $.ajax({
       method: 'GET',
       url: `https://restcountries.eu/rest/v2/${filter}`,
     }).then((response) => {
       countries = response;
-      console.log(countries);
       displayCountries();
-      console.log(countries[9]);
     });
   }
-
-  console.log(countries[0]);
 
   function displayCountries() {
     $countries.empty();
