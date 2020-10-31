@@ -1,6 +1,5 @@
 $(() => {
-
-  console.log('RESTCountries API')
+  console.log('RESTCountries API');
 
   // const buttonAction = function(e) {
   //   e.preventDefault()
@@ -8,58 +7,60 @@ $(() => {
   //   $('#id').text('text')
   //}
 
-  const $countries = $('.countries')
-  var countries = []
-  var worstCase= []
+  const $countries = $('.countries');
+  var countries = [];
+  var worstCase = [];
 
-  function getSpecificCountries(filter='all') {
-    console.log('getting specific countries')
+  function getSpecificCountries(filter = 'all') {
+    console.log('getting specific countries');
     $.ajax({
       method: 'GET',
-      url: `https://restcountries.eu/rest/v2/${filter}`
-    })
-      .then(response => {
-        countries = response
-        console.log(countries)
-        displayCountries()
-        console.log(countries[9])
-      })
+      url: `https://restcountries.eu/rest/v2/${filter}`,
+    }).then((response) => {
+      countries = response;
+      console.log(countries);
+      displayCountries();
+      console.log(countries[9]);
+    });
   }
 
-  console.log(countries[0])
+  console.log(countries[0]);
 
   function displayCountries() {
-    $countries.empty()
-    countries.forEach(country => {
-      var languages =[]
-      country.languages.forEach(language => {
-        languages.push(' '+language.name)
-      })
+    $countries.empty();
+    countries.forEach((country) => {
+      var languages = [];
+      country.languages.forEach((language) => {
+        languages.push(' ' + language.name);
+      });
 
-      var currencies = []
-      country.currencies.forEach(currency => {
+      var currencies = [];
+      country.currencies.forEach((currency) => {
         if (currency.symbol !== null) {
-          currencies.push(' '+currency.symbol+' '+currency.name)
+          currencies.push(' ' + currency.symbol + ' ' + currency.name);
         } else {
-          currencies.push(' '+currency.name)
+          currencies.push(' ' + currency.name);
         }
-      })
+      });
 
-      var timezones =[]
-      country.timezones.forEach(timezone => {
-        timezones.push(' '+timezone)
-      })
+      var timezones = [];
+      country.timezones.forEach((timezone) => {
+        timezones.push(' ' + timezone);
+      });
 
-      var area = 'unavailable'
+      var area = 'unavailable';
       if (country.area !== null) {
-        area = country.area
+        area = country.area;
       }
 
       $countries.append(`
         <div class='card country'>
           <div class='details'>
-            <h3 class='row'><a href='https://en.wikipedia.org/wiki/${country.name}'>${country.name}&nbsp</a>(${country.alpha2Code})</h3>
-            <h4 class='row'>${country.nativeName}</h4>
+            <h3 class='row countryName'>
+              <a href=https://en.wikipedia.org/wiki/${country.name}>${
+        country.name
+      }&nbsp</a>(${country.alpha2Code})</h3>
+            <h3 class='row countryName'>${country.nativeName}</h3>
             <div class='row'>
               <img src=${country.flag} alt="Flag of ${country.name}" />
             </div>
@@ -69,7 +70,9 @@ $(() => {
                 <p>Capital</p>
               </div>
               <div class='data'>
-                <p>${country.capital}</p>
+                <a href=https://en.wikipedia.org/wiki/${country.capital}>
+                  <p>${country.capital}</p>
+                </a>
               </div>
             </div>
 
@@ -78,7 +81,9 @@ $(() => {
                 <p>Area</p>
               </div>
               <div class='data'>
-                <p>${area.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')} km<sup>2</sup></p>
+                <p>${area
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',')} sq km</sup></p>
               </div>
             </div>
 
@@ -88,7 +93,9 @@ $(() => {
                 <p>Population</p>
               </div>
               <div class='data'>
-                <p>${country.population.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
+                <p>${country.population
+                  .toString()
+                  .replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
               </div>
             </div>
 
@@ -143,24 +150,16 @@ $(() => {
 
           </div>
         </div>
-      `)
-    })
+      `);
+    });
   }
 
-  getSpecificCountries()
+  getSpecificCountries();
 
   function findLongest(array) {
-    array.forEach(item => {
-
-    })
+    array.forEach((item) => {});
   }
-
-
-
-})
-
-
-
+});
 
 //
 // <div class='row'>
