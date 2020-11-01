@@ -1,7 +1,13 @@
 * {
   box-sizing: border-box;
   margin: 0px;
-  font-family: sans-serif;
+  font-family: "Ubuntu", sans-serif;
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10+ and Edge */
+  user-select: none;
+  /* Standard syntax */
 }
 
 a {
@@ -102,47 +108,34 @@ footer {
   padding: 1em;
 }
 
-.countries .country,
-.countries form {
-  display: flex;
-  flex-direction: column;
-}
-.countries .country .details,
-.countries form .details {
-  border: 0px solid dodgerblue;
-  width: 100%;
-  height: 100%;
-}
-.countries .country .details .row,
-.countries form .details .row {
+.card .row {
   border: 0px solid lightblue;
   display: flex;
   flex-direction: row;
   width: 100%;
 }
-.countries .country .details .row.countryName,
-.countries form .details .row.countryName {
+.card .row.titleBar {
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.card .row.countryName {
   justify-content: center;
 }
-.countries .country .details .row .labels,
-.countries form .details .row .labels {
+.card .row .labels {
   width: 25%;
   text-align: right;
   padding-right: 7px;
   font-weight: 600;
 }
-.countries .country .details .row .data,
-.countries form .details .row .data {
+.card .row .data {
   flex: 1;
 }
-.countries .country .details .row img,
-.countries form .details .row img {
+.card .row img {
   margin: 10px auto;
   width: 50%;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
 }
-.countries .country .details .row p,
-.countries form .details .row p {
+.card .row p {
   font-size: 0.8em;
   border: 0px solid orange;
   word-wrap: break-word;

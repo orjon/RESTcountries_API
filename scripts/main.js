@@ -2,14 +2,24 @@ $(() => {
   console.log('RESTCountries API');
 
   const $countries = $('.countries');
+  const $responseTime = $('.responseTime');
   var countries = [];
 
+  // API response time vars
+  let t0 = undefined;
+  let t1 = undefined;
+
   function getSpecificCountries(filter = 'all') {
-    console.log('Getting countries');
+    console.log('Getting countries...');
+    t0 = performance.now();
     $.ajax({
       method: 'GET',
       url: `https://restcountries.eu/rest/v2/${filter}`,
     }).then((response) => {
+      t1 = performance.now();
+      let responseTime =
+        'Response time: ' + ((t1 - t0) / 1000).toFixed(3) + 's';
+      $responseTime.html(responseTime);
       countries = response;
       displayCountries();
     });
