@@ -61,7 +61,7 @@ $(() => {
             <h3 class='row countryName'>
               <a href=https://en.wikipedia.org/wiki/Special:Search/${countryNameUrl}>${
         country.name
-      }&nbsp</a>(${country.alpha2Code})</h3>
+      }&nbsp</a>(${country.alpha3Code})</h3>
             <h3 class='row countryName'>${country.nativeName}</h3>
             <div class='row'>
               <img class='flag' src=${country.flag} alt='Flag of ${
