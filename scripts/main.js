@@ -52,16 +52,21 @@ $(() => {
         area = country.area;
       }
 
+      let countryNameUrl = country.name.replaceAll(' ', '&nbsp;');
+      let countryCapitalUrl = country.capital.replaceAll(' ', '&nbsp;');
+
       $countries.append(`
         <div class='card country'>
           <div class='details'>
             <h3 class='row countryName'>
-              <a href=https://en.wikipedia.org/wiki/${country.name}>${
+              <a href=https://en.wikipedia.org/wiki/Special:Search/${countryNameUrl}>${
         country.name
       }&nbsp</a>(${country.alpha2Code})</h3>
             <h3 class='row countryName'>${country.nativeName}</h3>
             <div class='row'>
-              <img src=${country.flag} alt="Flag of ${country.name}" />
+              <img class='flag' src=${country.flag} alt='Flag of ${
+        country.name
+      }' />
             </div>
 
             <div class='row'>
@@ -69,7 +74,7 @@ $(() => {
                 <p>Capital</p>
               </div>
               <div class='data'>
-                <a href=https://en.wikipedia.org/wiki/${country.capital}>
+                <a href=https://en.wikipedia.org/wiki/Special:Search/${countryCapitalUrl}>
                   <p>${country.capital}</p>
                 </a>
               </div>

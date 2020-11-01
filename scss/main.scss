@@ -118,6 +118,10 @@ footer {
       align-items: flex-end;
     }
 
+    .logo {
+      width: 50px;
+    }
+
     &.countryName {
       justify-content: center;
     }
@@ -132,7 +136,7 @@ footer {
       flex: 1;
     }
 
-    img {
+    .flag {
       margin: 10px auto;
       width: 50%;
       box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);

@@ -118,6 +118,9 @@ footer {
   justify-content: space-between;
   align-items: flex-end;
 }
+.card .row .logo {
+  width: 50px;
+}
 .card .row.countryName {
   justify-content: center;
 }
@@ -130,7 +133,7 @@ footer {
 .card .row .data {
   flex: 1;
 }
-.card .row img {
+.card .row .flag {
   margin: 10px auto;
   width: 50%;
   box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.15);
